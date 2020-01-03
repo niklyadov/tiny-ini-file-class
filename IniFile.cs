@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
@@ -56,12 +56,12 @@ namespace TinyINIController
 
         public void DeleteKey(string key, string section = null)
         {
-            Write(key, string.Empty, section ?? exe);
+            Write(key, null, section ?? exe);
         }
 
         public void DeleteSection(string section = null)
         {
-            Write(string.Empty, string.Empty, section ?? exe);
+            Write(null, string.Empty, section ?? exe);
         }
 
         public bool KeyExists(string key, string section = null)
