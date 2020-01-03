@@ -85,4 +85,24 @@ File `settings.ini` after operation (all block `main` has been removed)
 ; Comment2
 ````
 
+## **Example usage #5 (file access):**
+
+Default access for file - it's a `Read And Write`, but you can set access  manually in code to `ReadOnly` or `WriteOnly`. For example, if try write to file without rules, you can't do it and program was generated a new exceprion.
+
+````csharp
+
+// read & write (default access)
+IniFile fileFullAccess = new IniFile("settings.ini", FileAccess.ReadWrite);
+
+// only read access
+IniFile fileReadOnlyAccess = new IniFile("settings.ini", FileAccess.Read);
+
+// only write access
+IniFile fileWriteOnlyAccess = new IniFile("settings.ini", FileAccess.Write);
+
+//exception on write with Readonly access
+fileReadOnlyAccess.Write("hello", "world1", "main");
+
+````
+
 # That`s all! Thanks for reading!
