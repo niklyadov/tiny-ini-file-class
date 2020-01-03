@@ -61,7 +61,7 @@ namespace TinyINIController
 
         public void DeleteSection(string section = null)
         {
-            Write(null, string.Empty, section ?? exe);
+            Write(null, null, section ?? exe);
         }
 
         public bool KeyExists(string key, string section = null)
